@@ -7,7 +7,7 @@ A bilateral filter is used to remove noise and other artefacts that may interfer
 simple gaussian filter as it preserves edge sharpness. The image is then thresholded using an Adaptive threshold to filter out the background and the body of the 
 resistor. We then invert this threshold so that our region of interests are the coloured resistor bands. The blockSize and the constant is determined empirically.
 
-### determination of colour bands
+### Determination of colour bands
 A predifined list that consists of lower and upper colour bounds for every band is stored in the **BGR** format as well **H**ue**S**aturation**V**alue (HSV)
 format along with a multiplier which is used in determining the order of magnitude for the resistor. This list is then iterated over and mask for each colour is 
 created and then bitwise-ANDed with the thresholded image.All the contours are found for this new mask. The contours are then filtered to discard any contours whose
